@@ -30,11 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     chrome.scripting.executeScript({
                         target: { tabId: newTab.id },
                         func: (formData) => {
-                            document.querySelector('#input-text').value = formData.field1;
-                            // Add a delay to keep the console open
-                            setTimeout(() => {
-                                console.log('Delay to keep the console open');
-                            }, 5000);
+                            // Function to set field value
+                            const setFieldValue = () => {
+                                const inputElement = document.querySelector('#input-text');
+                                if (inputElement) {
+                                    inputElement.value = formData.field1 || '';
+                                    console.log('Input value set to:', formData.field1);
+                                } else {
+                                    console.error('Input element not found');
+                                }
+                            };
+
+                            // Wait for the page to load
+                            if (document.readyState === 'loading') {
+                                document.addEventListener('DOMContentLoaded', setFieldValue);
+                            } else {
+                                setFieldValue();
+                            }
                         },
                         args: [data.formData]
                     }, () => {

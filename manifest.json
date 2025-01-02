@@ -3,7 +3,10 @@
   "name": "1 Click",
   "version": "1.0",
   "permissions": ["activeTab", "storage", "scripting"],
-  "host_permissions": ["https://plymouth.ppmpro.com/*"],
+  "host_permissions": [
+    "https://plymouth.ppmpro.com/*",
+    "https://practice.expandtesting.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
