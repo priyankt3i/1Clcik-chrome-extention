@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Popup DOM fully loaded and parsed');
 
-    // Store sample formData for testing
-    chrome.storage.local.set({
-        formData: {
-            field1: 'Sample Data 1',
-            field2: 'Sample Data 2',
-            field3: 'Sample Data 3',
-            field4: 'Sample Data 4'
+    // Retrieve and log formData
+    chrome.storage.local.get('formData', (data) => {
+        if (chrome.runtime.lastError) {
+            console.error('Error retrieving formData:', chrome.runtime.lastError);
+            return;
         }
-    }, () => {
-        console.log('Sample formData stored');
+        if (data.formData) {
+            console.log('Retrieved formData:', data.formData);
+        } else {
+            console.warn('No formData found in storage');
+        }
     });
 
     document.getElementById('transferData').addEventListener('click', () => {
@@ -29,10 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     chrome.scripting.executeScript({
                         target: { tabId: newTab.id },
                         func: (formData) => {
-                            document.querySelector('#targetField1').value = formData.field1;
-                            document.querySelector('#targetField2').value = formData.field2;
-                            document.querySelector('#targetField3').value = formData.field3;
-                            document.querySelector('#targetField4').value = formData.field4;
+                            document.querySelector('#input-text').value = formData.field1;
+                            // Add a delay to keep the console open
+                            setTimeout(() => {
+                                console.log('Delay to keep the console open');
+                            }, 5000);
                         },
                         args: [data.formData]
                     }, () => {

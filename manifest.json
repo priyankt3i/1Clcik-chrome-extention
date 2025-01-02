@@ -1,21 +1,20 @@
 {
-    "manifest_version": 3,
-    "name": "1 Click",
-    "version": "1.0",
-    "permissions": ["activeTab", "storage"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "action": {
-      "default_popup": "popup/popup.html",
-      "default_icon": "assets/icon.png"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://plymouth.ppmpro.com/home"],
-        "js": ["content/content.js"],
-        "run_at": "document_end"
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "1 Click",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://plymouth.ppmpro.com/home.pa*"],
+      "js": ["./content/content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
