@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             if (data.formData) {
-                chrome.tabs.create({ url: 'https://practice.expandtesting.com/inputs' }, (newTab) => { //Change URL to target RockTalk page
+                chrome.tabs.create({ url: 'https://practice.expandtesting.com/inputs' }, (newTab) => { //Change URL to target webpage that need to be auto-filled
                     if (chrome.runtime.lastError) {
                         console.error('Error creating new tab:', chrome.runtime.lastError);
                         return;
