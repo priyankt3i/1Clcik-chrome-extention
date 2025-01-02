@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.disconnect(); // Stop observing once all elements are found.
 
             const data = {
-                field1: field1Element.value || 'N/A', // Innotas ID
-                field2: field2Element.value || 'N/A', // Project Number
-                field3: field3Element.value || 'N/A', // Title
-                field4: field4Element.value || 'N/A'  // Project Manager (Owner)
+                field1: field1Element.value || 'Innotas_ID', // Innotas ID
+                field2: field2Element.value || 'Project_Num', // Project Number
+                field3: field3Element.value || 'Title', // Title
+                field4: field4Element.value || 'ProjectManager'  // Project Manager (Owner)
             };
 
             console.log('Captured data:', data);
