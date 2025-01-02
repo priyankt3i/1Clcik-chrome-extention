@@ -4,7 +4,7 @@
 The **1 Click** Chrome extension is designed to streamline the process of capturing form data from a specific page and transferring it to another page with just a click of a button. The extension works by:
 - Extracting form data from one page (using content scripts).
 - Storing the data in Chrome's local storage.
-- Pasting the data into a specific field of another page using the extension popup.
+- Paste the data into a specific field on another page using the extension popup.
 
 ## Features
 - Automatically captures data from form fields on a specific page.
@@ -38,19 +38,19 @@ The extension requires the following permissions to function:
 - **`activeTab`**: To interact with the currently active tab.
 - **`storage`**: To store and retrieve form data.
 - **`scripting`**: To inject scripts into newly created tabs.
-- **`host_permissions`**: To allow access to specific websites (e.g., `https://plymouth.ppmpro.com/*` and `https://practice.expandtesting.com/*`).
+- **`host_permissions`**: To allow access to specific websites (e.g., `https://google.com/*` and `https://YouTube.com/*`).
 
 ---
 
 ## Usage
 
 1. **Capture Data**:
-   - The extension will automatically extract form data from the page matching the URL pattern (`https://plymouth.ppmpro.com/*`).
+   - The extension will automatically extract form data from the page matching the URL pattern (`https://source.com/*`).
    - Data is stored in Chrome's local storage after being captured.
 
 2. **Transfer Data**:
    - In the extension popup, click the "Transfer Data" button.
-   - This will open a new tab with the target URL (`https://practice.expandtesting.com/inputs`), and the captured data will be pasted into the corresponding input fields (e.g., `#input-text`).
+   - This will open a new tab with the target URL (`https://target.com/inputs`), and the captured data will be pasted into the corresponding input fields (e.g., `#input-text`).
 
 ---
 
@@ -66,7 +66,7 @@ To contribute or modify the extension:
 ## Troubleshooting
 
 - **The data isn't being pasted**: Make sure the target input fields exist and the selector (`#input-text`) is correct. Adjust the `popup.js` code to target the appropriate element.
-- **Form data isn't being captured**: Check the content script (`content.js`) and ensure the page you're targeting matches the URL pattern. Ensure the form fields have correct IDs.
+- **Form data isn't being captured**: Check the content script (`content.js`) and ensure the page you target matches the URL pattern. Could you make sure the form fields have correct IDs?
 
 ---
 
