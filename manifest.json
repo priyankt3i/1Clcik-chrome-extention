@@ -3,6 +3,7 @@
   "name": "1 Click",
   "version": "1.0",
   "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://plymouth.ppmpro.com/*"],
   "background": {
     "service_worker": "background.js"
   },
@@ -10,11 +11,12 @@
     "default_popup": "popup/popup.html",
     "default_icon": "assets/icon.png"
   },
+  
   "content_scripts": [
     {
       "matches": ["https://plymouth.ppmpro.com/home.pa*"],
       "js": ["./content/content.js"],
-      "run_at": "document_start"
+      "run_at": "document_idle"
     }
   ]
 }
