@@ -4,8 +4,8 @@
   "version": "1.0",
   "permissions": ["activeTab", "storage", "scripting"],
   "host_permissions": [
-    "https://plymouth.ppmpro.com/*",
-    "https://practice.expandtesting.com/*" //Change for RockTalk Later
+    "https://<SourceURL.com>/*",
+    "https://<targetURL.com>/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -17,7 +17,7 @@
   
   "content_scripts": [
     {
-      "matches": ["https://plymouth.ppmpro.com/*"],
+      "matches": ["<SourceURL>.com/*"],
       "js": ["./content/content.js"],
       "run_at": "document_idle"
     }
