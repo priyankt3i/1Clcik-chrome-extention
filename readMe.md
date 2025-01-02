@@ -1,5 +1,7 @@
 # 1 Click Chrome Extension - Kumar Priyank
 
+<img align="right" width="400" alt="logo" src="./assets/icon.png">
+
 ## Overview
 The **1 Click** Chrome extension is designed to streamline the process of capturing form data from a specific page and transferring it to another page with just a click of a button. The extension works by:
 - Extracting form data from one page (using content scripts).
