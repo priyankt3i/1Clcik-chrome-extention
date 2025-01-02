@@ -13,10 +13,10 @@ const captureFields = () => {
     if (field1Element && field2Element && field3Element && field4Element) {
         console.log('All elements found. Capturing data...');
         const data = {
-            field1: field1Element.value || 'N/A', // Innotas ID
-            field2: field2Element.value || 'N/A', // Project Number
-            field3: field3Element.value || 'N/A', // Title
-            field4: field4Element.value || 'N/A'  // Project Manager (Owner)
+            field1: field1Element.value || field1Element.textContent.trim() || 'N/A', // Innotas ID
+            field2: field2Element.value || field2Element.textContent.trim() || 'N/A', // Project Number
+            field3: field3Element.value || field3Element.textContent.trim() || 'N/A', // Title
+            field4: field4Element.value || field4Element.textContent.trim() || 'N/A'  // Project Manager (Owner)
         };
 
         console.log('Captured data:', data);
